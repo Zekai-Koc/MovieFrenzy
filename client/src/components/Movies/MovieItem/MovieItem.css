@@ -1,0 +1,71 @@
+.movie {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   /* margin: 1rem; */
+   /* padding-bottom: 1rem; */
+   border-bottom: 1px solid #ccc;
+   /* border: 1px solid blue; */
+}
+
+.wrapper-movie-item {
+   /* border: 1px solid red; */
+   width: 75%;
+   display: flex;
+}
+
+.wrapper-movie-item:hover {
+   cursor: pointer;
+}
+
+.poster {
+   width: 120px;
+   height: auto;
+   margin: 10px;
+   transition: transform 0.7s ease;
+}
+
+.poster:hover {
+   transform: scale(1.9);
+}
+.wrapper-movie-name-price {
+   /* border: 1px solid black; */
+   width: 400px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 0 10px;
+}
+
+.movie h3 {
+   margin: 0 0 0.25rem 0;
+   text-align: center;
+}
+
+.price {
+   margin-top: 0.25rem;
+   font-weight: bold;
+   color: #ad5502;
+   font-size: 1.25rem;
+}
+
+.description {
+   font-style: italic;
+   padding: 20px;
+   /* border: 1px solid red; */
+}
+
+/* Add a media query for screen sizes below 600px */
+@media (max-width: 700px) {
+   /* Hide the .description div */
+   .movie .description {
+      display: none;
+   }
+}
+
+@media (max-width: 600px) {
+   .wrapper-movie-name-price {
+      font-size: 12px;
+   }
+}
