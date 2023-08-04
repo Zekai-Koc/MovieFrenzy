@@ -9,11 +9,15 @@ const Header = (props) => {
       <>
          <header className="header">
             <h1>Movie Frenzy</h1>
-            <HeaderCartButton onClick={props.onShowCart} />
+            <HeaderCartButton
+               onClick={props.onShowCart}
+               cartItems={props.cartItems}
+               // addCartHandler={props.addCartHandler}
+            />
          </header>
-         <div className="main-image">
+         {/* <div className="main-image">
             <img src={headerImage} alt="Cinema curtain!" />
-         </div>
+         </div> */}
       </>
    );
 };

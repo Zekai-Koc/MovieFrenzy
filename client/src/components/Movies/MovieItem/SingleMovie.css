@@ -12,6 +12,8 @@
    /* border: 1px solid red; */
    width: 75%;
    display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .wrapper-movie-item:hover {
@@ -19,9 +21,9 @@
 }
 
 .poster {
-   width: 120px;
-   height: auto;
-   margin: 10px;
+   /* width: 100px; */
+   height: 120px;
+   /* margin: 10px; */
    transition: transform 0.7s ease;
 }
 

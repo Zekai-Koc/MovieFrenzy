@@ -16,7 +16,7 @@ const Details = () => {
 
    const { data, loading, error } = useFetch(url);
 
-   console.log(data);
+   // console.log(data);
 
    if (loading) {
       return (

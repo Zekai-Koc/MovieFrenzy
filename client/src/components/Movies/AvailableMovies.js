@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../UI/Card";
-import MovieItem from "./MovieItem/MovieItem";
+import SingleMovie from "./MovieItem/SingleMovie";
 import "./AvailableMovies.css";
 import useFetch from "../hooks/useFetch";
+// import SearchMovie from "./MovieSearch/SearchMovie";
 
-// const API_Key_TMDB = "api_key=58d61fb46bf00aad6d50930c6ad4e906";
-// const baseUrlTMDB = `https://api.themoviedb.org/3/`;
-// const discoverTMDB = `discover/movie?`;
-// const discoverUrlTMDB = baseUrlTMDB + discoverTMDB + API_Key_TMDB;
 const baseImgUrlTMDB = "https://image.tmdb.org/t/p/w500";
-// const searchUrlTMDB = `${baseUrlTMDB}search/movie?${API_Key_TMDB}&query=`;
 
-const AvailableMovies = ({ searchItem }) => {
-   const apiUrl = searchItem
-      ? `http://localhost:5000/movies/search/${searchItem}`
+const AvailableMovies = ({ onSearch, addToCart }) => {
+   const [searchText, setSearchText] = useState(onSearch);
+
+   // const addCartHandler = (ttt) => {
+   //    console.log(ttt);
+   // };
+
+   useEffect(() => {
+      setSearchText(onSearch);
+   }, [onSearch]);
+
+   const apiUrl = searchText
+      ? `http://localhost:5000/movies/search/${searchText}`
       : "http://localhost:5000/movies";
 
    const { data, loading, error } = useFetch(apiUrl);
@@ -42,20 +48,34 @@ const AvailableMovies = ({ searchItem }) => {
       );
    }
 
+   // console.log(data);
+
    const moviesList = data.results.map((movie) => (
-      <MovieItem
+      <SingleMovie
          key={movie.id}
          id={movie.id}
-         name={movie.original_title}
-         description={movie.overview.slice(0, 100) + "..."}
+         name={
+            movie.original_title.length < 15
+               ? movie.original_title
+               : movie.original_title.slice(0, 15) + "..."
+         }
+         description={movie.overview.slice(0, 40) + "..."}
          price={movie.vote_average}
          poster={baseImgUrlTMDB + movie.poster_path}
+         release={movie.release_date}
+         popularity={movie.popularity}
+         addToCart={addToCart}
       />
    ));
+
+   // const onSearchHandler = (searchText) => {
+   //    setSearchText(searchText);
+   // };
 
    return (
       <section className="movies">
          <Card>
+            {/* <SearchMovie onSearch={onSearchHandler} /> */}
             <ul>{moviesList}</ul>
          </Card>
       </section>

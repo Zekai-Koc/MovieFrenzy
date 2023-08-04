@@ -3,7 +3,7 @@
    width: 90%;
    /* margin: 2rem auto; */
    margin: 2rem auto;
-   margin-top: 5px;
+   margin-top: 0;
    animation: movies-appear 1s ease-out forwards;
 }
 
@@ -13,7 +13,7 @@
    padding: 0;
 }
 
-@keyframes movies-appear {
+/* @keyframes movies-appear {
    from {
       opacity: 0;
       transform: translateY(3rem);
@@ -23,7 +23,7 @@
       opacity: 1;
       transform: translateY(0);
    }
-}
+} */
 
 /**/
 .status-message {

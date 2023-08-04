@@ -1,17 +1,25 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import MovieItemForm from "./MovieItemForm";
-import "./MovieItem.css";
-import CartContext from "../../../store/cart_context";
+import AddMovieAmountForm from "./AddMovieAmountForm";
+import "./SingleMovie.css";
+// import CartContext from "../../../store/cart_context";
 
-const MovieItem = (props) => {
-   const cartCtx = useContext(CartContext);
+const SingleMovie = (props) => {
+   // const cartCtx = useContext(CartContext);
 
    const price = `$${props.price.toFixed(2)}`;
    const navigate = useNavigate();
+
    const addToCartHandler = (amount) => {
-      cartCtx.addItem({
+      // cartCtx.addItem({
+      //    id: props.id,
+      //    name: props.name,
+      //    amount: amount,
+      //    price: props.price,
+      // });
+
+      props.addToCart({
          id: props.id,
          name: props.name,
          amount: amount,
@@ -34,12 +42,19 @@ const MovieItem = (props) => {
                </div>
                <div className="description">{props.description}</div>
             </div>
+            {/* <div>
+               <h4>{props.release}</h4>
+               <p>Popularity: {props.popularity}</p>
+            </div> */}
             <div>
-               <MovieItemForm id={props.id} onAddToCart={addToCartHandler} />
+               <AddMovieAmountForm
+                  id={props.id}
+                  onAddToCart={addToCartHandler}
+               />
             </div>
          </div>
       </li>
    );
 };
 
-export default MovieItem;
+export default SingleMovie;

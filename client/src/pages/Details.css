@@ -1,11 +1,19 @@
 .details-container {
    /* max-width: 800px; */
-   margin: auto;
+   /* margin: auto;
    padding: 20px;
    background-color: #f9f9f9;
    border-radius: 10px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-   margin: 30px;
+   margin: 30px; */
+
+   padding: 1rem;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+   border-radius: 14px;
+   background-color: white;
+   min-width: 500px;
+   border: 10px solid #8a2b06;
+   margin: 75px;
 }
 
 .details-header {
