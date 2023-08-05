@@ -32,26 +32,21 @@ const SingleMovie = (props) => {
    };
 
    return (
-      <li>
-         <div className="movie">
-            <div className="wrapper-movie-item" onClick={handleClick}>
-               <img className="poster" src={props.poster} alt={props.name} />
-               <div className="wrapper-movie-name-price">
-                  <h3>{props.name}</h3>
-                  <div className="price">{price}</div>
-               </div>
-               <div className="description">{props.description}</div>
+      <li className="list-item-single-movie">
+         <div className="container-movie-props" onClick={handleClick}>
+            <img className="poster" src={props.poster} alt={props.name} />
+            <div className="container-movie-name-price">
+               <h3>{props.name}</h3>
+               <div className="price">{price}</div>
             </div>
-            {/* <div>
+            <div className="description">{props.description}</div>
+         </div>
+         {/* <div>
                <h4>{props.release}</h4>
                <p>Popularity: {props.popularity}</p>
             </div> */}
-            <div>
-               <AddMovieAmountForm
-                  id={props.id}
-                  onAddToCart={addToCartHandler}
-               />
-            </div>
+         <div className="container-add-movie-amount-form">
+            <AddMovieAmountForm id={props.id} onAddToCart={addToCartHandler} />
          </div>
       </li>
    );

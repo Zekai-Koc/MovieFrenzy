@@ -1,46 +1,46 @@
-.movie {
+.list-item-single-movie {
    display: flex;
-   justify-content: space-between;
+   /* justify-content: space-between; */
    align-items: center;
    /* margin: 1rem; */
    /* padding-bottom: 1rem; */
    border-bottom: 1px solid #ccc;
+   margin-bottom: 5px;
    /* border: 1px solid blue; */
 }
 
-.wrapper-movie-item {
+.container-movie-props {
    /* border: 1px solid red; */
    width: 75%;
    display: flex;
-   justify-content: center;
+   /* justify-content: center; */
    align-items: center;
-}
-
-.wrapper-movie-item:hover {
+   /* border: 1px solid red; */
    cursor: pointer;
 }
 
 .poster {
    /* width: 100px; */
-   height: 120px;
+   height: 110px;
    /* margin: 10px; */
    transition: transform 0.7s ease;
 }
 
 .poster:hover {
-   transform: scale(1.9);
+   transform: scale(5);
 }
-.wrapper-movie-name-price {
+.container-movie-name-price {
    /* border: 1px solid black; */
-   width: 400px;
+   /* width: 400px; */
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding: 0 10px;
+   padding: 0;
+   margin: 0 10px;
 }
 
-.movie h3 {
+.list-item-single-movie h3 {
    margin: 0 0 0.25rem 0;
    text-align: center;
 }
@@ -58,16 +58,39 @@
    /* border: 1px solid red; */
 }
 
+.container-add-movie-amount-form {
+   /* border: 1px solid blue; */
+}
+
 /* Add a media query for screen sizes below 600px */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
    /* Hide the .description div */
-   .movie .description {
+   .list-item-single-movie .description {
       display: none;
    }
 }
 
-@media (max-width: 600px) {
-   .wrapper-movie-name-price {
-      font-size: 12px;
+@media (max-width: 800px) {
+   /* Hide the .description div */
+   .list-item-single-movie .description {
+      display: block;
    }
 }
+
+@media (max-width: 600px) {
+   /* Hide the .description div */
+   /* .list-item-single-movie .poster {
+      display: none;
+   } */
+
+   .list-item-single-movie .description {
+      display: none;
+   }
+}
+
+/* @media (max-width: 600px) {
+   .container-movie-name-price {
+      font-size: 12px;
+   }
+   
+} */

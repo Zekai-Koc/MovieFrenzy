@@ -10,6 +10,7 @@ html {
 
 body {
    margin: 0;
+   padding: 0;
    /* background-image: url("./assets/Best-Movies-to-stream-on-itv-hub-1200x675.webp"); */
    /* background-image: url("./assets/summer-movies-1587392939.jpg"); */
    /* background-image: url("./assets/best-nye-movies-2-1671123762.png"); */
@@ -18,10 +19,12 @@ body {
    /* background-image: url("./assets/emotions_movies_header.jpg"); */
    /* background-image: url("./assets/dgxbliq1v8n81.png"); */
    /* background-image: url("./assets/christian-movies-on-netflix-1669085777.jpg"); */
-   background-image: url("./assets/best-valentines-movies-1675040306.jpg");
+   /* background-image: url("./assets/best-valentines-movies-1675040306.jpg"); */
    /* background-repeat: no-repeat; */
    /* background-size: cover; */
    /* background-position: center; */
 
-   background-color: #8a2b06;
+   /* background-color: #8a2b06; */
+   background-color: chartreuse;
+   /* height: 1000px; */
 }

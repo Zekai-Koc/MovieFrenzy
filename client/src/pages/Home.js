@@ -1,13 +1,44 @@
 import React, { useState, useEffect } from "react";
 
 import Header from "../components/Layout/Header";
-import Movies from "../components/Movies/Movies";
+// import Movies from "../components/Movies/Movies";
+import Movies2 from "../components/Movies/Movies2";
 import Cart from "../components/Cart/Cart";
+import Banner from "../components/Banner/Banner";
+import "./Home.css";
 // import CartProvider from "../store/CartProvider";
 
-// const checkExists = (itemList, item) => {
-//    return
-// }
+const cartUtil = (itemList, newItem, operation) => {
+   const cartItemIndex = itemList.findIndex((item) => item.id === newItem.id);
+
+   const existingCartItem = itemList[cartItemIndex];
+   let updatedItems;
+
+   if (operation === "ADD") {
+      if (existingCartItem) {
+         const updatedItem = {
+            ...existingCartItem,
+            amount: existingCartItem.amount + 1,
+         };
+         updatedItems = [...itemList];
+         updatedItems[cartItemIndex] = updatedItem;
+      } else {
+         updatedItems = itemList.concat(newItem);
+      }
+   } else if (operation === "REMOVE") {
+      if (existingCartItem.amount === 1) {
+         updatedItems = itemList.filter((item) => item.id !== newItem.id);
+      } else {
+         const updatedItem = {
+            ...existingCartItem,
+            amount: existingCartItem.amount - 1,
+         };
+         updatedItems = [...itemList];
+         updatedItems[cartItemIndex] = updatedItem;
+      }
+   }
+   return updatedItems;
+};
 
 function Home() {
    const [cartIsShown, setCartIsShown] = useState(false);
@@ -20,7 +51,6 @@ function Home() {
             return total + item.price * item.amount;
          }, 0)
       );
-      // console.log("cartItems: ", cartItems);
    }, [cartItems]);
 
    const showCartHandler = () => {
@@ -32,73 +62,19 @@ function Home() {
    };
 
    const addToCart = (newItem) => {
-      const cartItemIndex = cartItems.findIndex(
-         (item) => item.id === newItem.id
-      );
-
-      const existingCartItem = cartItems[cartItemIndex];
-      let updatedItems;
-
-      if (existingCartItem) {
-         const updatedItem = {
-            ...existingCartItem,
-            amount: existingCartItem.amount + 1,
-         };
-         updatedItems = [...cartItems];
-         updatedItems[cartItemIndex] = updatedItem;
-      } else {
-         updatedItems = cartItems.concat(newItem);
-      }
-
-      setCartItems(updatedItems);
+      setCartItems(cartUtil(cartItems, newItem, "ADD"));
    };
 
    const addCartHandler = (newItem) => {
-      // console.log("newItem", newItem);
-      const cartItemIndex = cartItems.findIndex(
-         (item) => item.id === newItem.id
-      );
-
-      const existingCartItem = cartItems[cartItemIndex];
-      let updatedItems;
-
-      if (existingCartItem) {
-         const updatedItem = {
-            ...existingCartItem,
-            amount: existingCartItem.amount + 1,
-         };
-         updatedItems = [...cartItems];
-         updatedItems[cartItemIndex] = updatedItem;
-      } else {
-         updatedItems = cartItems.concat(newItem);
-      }
-
-      setCartItems(updatedItems);
+      setCartItems(cartUtil(cartItems, newItem, "ADD"));
    };
 
    const removeCartHandler = (newItem) => {
-      const existingCartItemIndex = cartItems.findIndex(
-         (item) => item.id === newItem.id
-      );
-      const existingItem = cartItems[existingCartItemIndex];
-      // const updatedTotalAmount = newItem.totalAmount - existingItem.price;
-      let updatedItems;
-      if (existingItem.amount === 1) {
-         updatedItems = cartItems.filter((item) => item.id !== newItem.id);
-      } else {
-         const updatedItem = {
-            ...existingItem,
-            amount: existingItem.amount - 1,
-         };
-         updatedItems = [...cartItems];
-         updatedItems[existingCartItemIndex] = updatedItem;
-      }
-      setCartItems(updatedItems);
+      setCartItems(cartUtil(cartItems, newItem, "REMOVE"));
    };
 
    return (
-      <>
-         {/* <CartProvider> */}
+      <div>
          {cartIsShown && (
             <Cart
                onClose={hideCartHandler}
@@ -108,12 +84,35 @@ function Home() {
                onRemove={removeCartHandler}
             />
          )}
+
          <Header onShowCart={showCartHandler} cartItems={cartItems} />
-         <main>
-            <Movies addToCart={addToCart} />
-         </main>
+
+         <div className="container-main-body">
+            <div className="container-main--left">
+               <Banner />
+            </div>
+            <div className="container-main--right">
+               <Movies2 addToCart={addToCart} />
+            </div>
+         </div>
+
+         {/* <CartProvider> */}
+         {/* {cartIsShown && (
+            <Cart
+               onClose={hideCartHandler}
+               cartItems={cartItems}
+               totalAmount={totalAmount}
+               onAdd={addCartHandler}
+               onRemove={removeCartHandler}
+            />
+         )}
+         <Header onShowCart={showCartHandler} cartItems={cartItems} /> */}
+         {/* <main className="container-main"> */}
+         {/* <Banner /> */}
+         {/* <Movies addToCart={addToCart} /> */}
+         {/* </main> */}
          {/* </CartProvider> */}
-      </>
+      </div>
    );
 }
 

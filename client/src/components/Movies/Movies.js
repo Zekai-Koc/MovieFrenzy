@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Movies.css";
 
 import MoviesSummary from "./WelcomeMessage";
 import AvailableMovies from "./AvailableMovies";
@@ -18,13 +19,10 @@ const Movies = ({ addToCart }) => {
    // };
 
    return (
-      <>
-         {/* <MoviesSummary /> */}
-         {/* <SearchMovie onSearch={onSearchHandler} /> */}
-         {/* <AvailableMovies searchItem={searchText} /> */}
+      <div className="container-main-right">
          <MovieSearch onSearch={onSearchHandler} />
          <AvailableMovies onSearch={searchText} addToCart={addToCart} />
-      </>
+      </div>
    );
 };
 
