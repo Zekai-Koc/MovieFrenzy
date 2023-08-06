@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SingleMovie from "./MovieItem/SingleMovie";
 import "./MovieList.css";
 import useFetch from "../hooks/useFetch";
+import { SearchContext } from "../../store/SearchContext";
 
 const baseImgUrlTMDB = "https://image.tmdb.org/t/p/w500";
 
-const MovieList = ({ onSearch, addToCart }) => {
-   const [searchText, setSearchText] = useState(onSearch);
+const MovieList = ({ addToCart }) => {
+   const value = useContext(SearchContext);
 
-   useEffect(() => {
-      setSearchText(onSearch);
-   }, [onSearch]);
-
-   const apiUrl = searchText
-      ? `http://localhost:5000/movies/search/${searchText}`
+   const apiUrl = value[0]
+      ? `http://localhost:5000/movies/search/${value[0]}`
       : "http://localhost:5000/movies";
 
    const { data, loading, error } = useFetch(apiUrl);

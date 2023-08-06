@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./MovieSearch.css";
+import { SearchContext } from "../../../store/SearchContext";
 
-const MovieSearch2 = ({ onSearch }) => {
+const MovieSearch = () => {
    const [searchText, setSearchText] = useState("");
+
+   const [searchTextContext, setSearchTextContext] = useContext(SearchContext);
+   console.log("inside movie search: ", searchTextContext);
 
    const onSubmitHandler = (event) => {
       event.preventDefault();
-      onSearch(searchText);
+      // onSearch(searchText);
+      setSearchTextContext(searchText);
    };
 
    return (
@@ -24,4 +29,4 @@ const MovieSearch2 = ({ onSearch }) => {
    );
 };
 
-export default MovieSearch2;
+export default MovieSearch;
