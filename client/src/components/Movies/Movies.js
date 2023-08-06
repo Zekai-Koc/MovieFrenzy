@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "./Movies.css";
-
-import MoviesSummary from "./WelcomeMessage";
-import AvailableMovies from "./AvailableMovies";
-// import SearchMovie from "./MovieSearch/SearchMovie";
 import MovieSearch from "./MovieSearch/MovieSearc";
+import MovieList from "./MovieList";
 
-const Movies = ({ addToCart }) => {
+const Movies2 = ({ addToCart }) => {
    const [searchText, setSearchText] = useState("");
 
    const onSearchHandler = (searchText) => {
@@ -14,16 +11,16 @@ const Movies = ({ addToCart }) => {
       setSearchText(searchText);
    };
 
-   // const onAddCart = (rrr) => {
-   //    console.log(rrr);
-   // };
-
    return (
-      <div className="container-main-right">
-         <MovieSearch onSearch={onSearchHandler} />
-         <AvailableMovies onSearch={searchText} addToCart={addToCart} />
+      <div className="container-movies">
+         <div className="container-movies-top">
+            <MovieSearch onSearch={onSearchHandler} />
+         </div>
+         <div className="container-movies-bottom">
+            <MovieList onSearch={searchText} addToCart={addToCart} />
+         </div>
       </div>
    );
 };
 
-export default Movies;
+export default Movies2;

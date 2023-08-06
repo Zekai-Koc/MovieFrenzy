@@ -1,0 +1,32 @@
+.container-banner {
+   position: relative;
+   width: 100%;
+   margin-bottom: 20px;
+   min-width: 300px;
+}
+
+.banner-image {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+.sale-image {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 110px;
+   height: auto;
+   z-index: 1;
+}
+
+.total-discount {
+   margin: 0;
+   text-align: center;
+}
+
+@media (max-width: 800px) {
+   .sale-image {
+      width: 200px;
+   }
+}

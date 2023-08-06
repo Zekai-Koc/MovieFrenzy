@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Card from "../UI/Card";
 import SingleMovie from "./MovieItem/SingleMovie";
 import "./MovieList.css";
 import useFetch from "../hooks/useFetch";

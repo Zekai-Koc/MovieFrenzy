@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./MovieSearch.css";
 
-const MovieSearch = ({ onSearch }) => {
+const MovieSearch2 = ({ onSearch }) => {
    const [searchText, setSearchText] = useState("");
 
    const onSubmitHandler = (event) => {
@@ -10,8 +10,8 @@ const MovieSearch = ({ onSearch }) => {
    };
 
    return (
-      <div className="wrapper-search2">
-         <form className="search-form2" onSubmit={onSubmitHandler}>
+      <div className="container-movie-search">
+         <form onSubmit={onSubmitHandler}>
             <input
                placeholder="Movie Name..."
                value={searchText}
@@ -19,11 +19,9 @@ const MovieSearch = ({ onSearch }) => {
             />
             <button>Search</button>
          </form>
-         <h1 className="search-title2">
-            {searchText === "" ? "Popular Movies" : searchText}
-         </h1>
+         <h3>{searchText === "" ? "Popular Movies" : searchText}</h3>
       </div>
    );
 };
 
-export default MovieSearch;
+export default MovieSearch2;

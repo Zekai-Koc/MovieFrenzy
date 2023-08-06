@@ -1,4 +1,16 @@
-.container-main-right {
-   border: 10px solid black;
-   width: auto;
+.container-movies {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.container-movies-top {
+   /* background-color: cadetblue; */
+   /* height: 75px; */
+}
+
+.container-movies-bottom {
+   /* background-color: darkred; */
+   /* height: 100%;
+   width: 100%; */
 }

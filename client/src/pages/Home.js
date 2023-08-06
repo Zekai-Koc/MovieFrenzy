@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import Header from "../components/Layout/Header";
-// import Movies from "../components/Movies/Movies";
-import Movies2 from "../components/Movies/Movies2";
+import Movies from "../components/Movies/Movies";
 import Cart from "../components/Cart/Cart";
 import Banner from "../components/Banner/Banner";
 import "./Home.css";
-// import CartProvider from "../store/CartProvider";
 
 const cartUtil = (itemList, newItem, operation) => {
    const cartItemIndex = itemList.findIndex((item) => item.id === newItem.id);
@@ -92,26 +90,9 @@ function Home() {
                <Banner />
             </div>
             <div className="container-main--right">
-               <Movies2 addToCart={addToCart} />
+               <Movies addToCart={addToCart} />
             </div>
          </div>
-
-         {/* <CartProvider> */}
-         {/* {cartIsShown && (
-            <Cart
-               onClose={hideCartHandler}
-               cartItems={cartItems}
-               totalAmount={totalAmount}
-               onAdd={addCartHandler}
-               onRemove={removeCartHandler}
-            />
-         )}
-         <Header onShowCart={showCartHandler} cartItems={cartItems} /> */}
-         {/* <main className="container-main"> */}
-         {/* <Banner /> */}
-         {/* <Movies addToCart={addToCart} /> */}
-         {/* </main> */}
-         {/* </CartProvider> */}
       </div>
    );
 }
