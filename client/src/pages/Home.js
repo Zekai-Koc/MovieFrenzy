@@ -72,7 +72,7 @@ function Home() {
    };
 
    return (
-      <div>
+      <div data-testid="home-page">
          {cartIsShown && (
             <Cart
                onClose={hideCartHandler}

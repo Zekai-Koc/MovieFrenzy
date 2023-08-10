@@ -1,28 +1,19 @@
 .list-item-single-movie {
    display: flex;
-   /* justify-content: space-between; */
    align-items: center;
-   /* margin: 1rem; */
-   /* padding-bottom: 1rem; */
    border-bottom: 1px solid #ccc;
    margin-bottom: 5px;
-   /* border: 1px solid blue; */
 }
 
 .container-movie-props {
-   /* border: 1px solid red; */
    width: 75%;
    display: flex;
-   /* justify-content: center; */
    align-items: center;
-   /* border: 1px solid red; */
    cursor: pointer;
 }
 
 .poster {
-   /* width: 100px; */
    height: 110px;
-   /* margin: 10px; */
    transition: transform 0.7s ease;
 }
 
@@ -30,8 +21,6 @@
    transform: scale(5);
 }
 .container-movie-name-price {
-   /* border: 1px solid black; */
-   /* width: 400px; */
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -55,42 +44,22 @@
 .description {
    font-style: italic;
    padding: 20px;
-   /* border: 1px solid red; */
 }
 
-.container-add-movie-amount-form {
-   /* border: 1px solid blue; */
-}
-
-/* Add a media query for screen sizes below 600px */
 @media (max-width: 900px) {
-   /* Hide the .description div */
    .list-item-single-movie .description {
       display: none;
    }
 }
 
 @media (max-width: 800px) {
-   /* Hide the .description div */
    .list-item-single-movie .description {
       display: block;
    }
 }
 
 @media (max-width: 600px) {
-   /* Hide the .description div */
-   /* .list-item-single-movie .poster {
-      display: none;
-   } */
-
    .list-item-single-movie .description {
       display: none;
    }
 }
-
-/* @media (max-width: 600px) {
-   .container-movie-name-price {
-      font-size: 12px;
-   }
-   
-} */

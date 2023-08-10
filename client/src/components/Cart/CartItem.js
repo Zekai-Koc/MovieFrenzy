@@ -1,13 +1,13 @@
 import React from "react";
 import "./CartItem.css";
-const audioRemove = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
-const audioAdd = new Audio("https://www.fesliyanstudios.com/play-mp3/5451");
+// const audioRemove = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+// const audioAdd = new Audio("https://www.fesliyanstudios.com/play-mp3/5451");
 
 const CartItem = (props) => {
    const price = `$${props.price.toFixed(2)}`;
 
    const handleOnClickMinus = () => {
-      audioRemove.play();
+      // audioRemove.play();
 
       props.onRemove({
          name: props.name,
@@ -18,12 +18,12 @@ const CartItem = (props) => {
    };
 
    const handleOnClickPlus = () => {
-      audioAdd.src = "https://www.fesliyanstudios.com/play-mp3/5451";
-      audioAdd.play();
+      // audioAdd.src = "https://www.fesliyanstudios.com/play-mp3/5451";
+      // audioAdd.play();
 
-      setTimeout(() => {
-         audioAdd.src = "";
-      }, 340);
+      // setTimeout(() => {
+      //    audioAdd.src = "";
+      // }, 340);
 
       props.onAdd({
          name: props.name,

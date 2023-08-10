@@ -32,7 +32,7 @@ const SingleMovie = (props) => {
    };
 
    return (
-      <li className="list-item-single-movie">
+      <li className="list-item-single-movie" data-testid="movie-container">
          <div className="container-movie-props" onClick={handleClick}>
             <img className="poster" src={props.poster} alt={props.name} />
             <div className="container-movie-name-price">

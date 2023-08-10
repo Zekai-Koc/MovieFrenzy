@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Movies.css";
 import MovieSearch from "./MovieSearch/MovieSearc";
 import MovieList from "./MovieList";
 import { SearchProvider } from "../../store/SearchContext";
 
-const Movies2 = ({ addToCart }) => {
+const Movies = ({ addToCart }) => {
    return (
       <SearchProvider>
-         <div className="container-movies">
+         <div className="container-movies" data-testid="container-movies">
             <div className="container-movies-top">
                <MovieSearch />
             </div>
@@ -19,4 +19,4 @@ const Movies2 = ({ addToCart }) => {
    );
 };
 
-export default Movies2;
+export default Movies;

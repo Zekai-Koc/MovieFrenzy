@@ -1,0 +1,120 @@
+.container-filmstrip {
+   text-align: center;
+   margin: 50px 0;
+   position: absolute;
+}
+
+.image-filmstrip {
+   width: 1500px;
+   min-width: 1500px;
+}
+
+.image-filmstrip-movie1 {
+   position: absolute;
+   width: 850px;
+   height: 250px;
+   clip-path: polygon(135px 0px, 700px 0px, 850px 250px, 0px 250px);
+   bottom: 5px;
+   left: 558px;
+   /* border: 5px solid red; */
+}
+
+.image-filmstrip-movie2 {
+   position: absolute;
+   width: 700px;
+   height: 310px;
+   clip-path: polygon(135px 0px, 399px 0px, 531px 320px, 0px 320px);
+   bottom: 283px;
+   left: 711px;
+   /* border: 1px solid red; */
+}
+
+.image-filmstrip-movie3 {
+   position: absolute;
+   width: 500px;
+   height: 190px;
+   clip-path: polygon(255px 0, 400px 0, 580px 600px, 160px 320px);
+   bottom: 610px;
+   left: 650px;
+   /* border: 1px solid red; */
+}
+
+.image-filmstrip-movie4 {
+   position: absolute;
+   width: 500px;
+   height: 125px;
+   clip-path: polygon(240px 0, 325px 0, 455px 600px, 160px 320px);
+   bottom: 805px;
+   left: 695px;
+   /* border: 1px solid red; */
+}
+
+.image-filmstrip-movie5 {
+   position: absolute;
+   width: 450px;
+   height: 90px;
+   clip-path: polygon(233px 0, 280px 0, 400px 600px, 160px 320px);
+   bottom: 934px;
+   left: 720px;
+   /* border: 1px solid blue; */
+}
+
+.image-filmstrip-movie6 {
+   position: absolute;
+   width: 400px;
+   height: 30px;
+   clip-path: polygon(230px 0, 270px 0, 400px 600px, 160px 320px);
+   bottom: 1025px;
+   left: 725px;
+   /* border: 1px solid red; */
+}
+
+.image-filmstrip-movie7 {
+   position: absolute;
+   width: 500px;
+   height: 810px;
+   clip-path: polygon(0px 100px, 220px 230px, 220px 690px, 0px 810px);
+   bottom: 270px;
+   left: -10px;
+   /* border: 3px solid blue; */
+}
+
+.image-filmstrip-movie8 {
+   position: absolute;
+   width: 500px;
+   height: 810px;
+   clip-path: polygon(0px 240px, 270px 352px, 270px 572px, 0px 683px);
+   bottom: 270px;
+   left: 220px;
+   /* border: 3px solid blue; */
+}
+
+.image-filmstrip-movie9 {
+   position: absolute;
+   width: 500px;
+   height: 810px;
+   clip-path: polygon(0px 350px, 155px 400px, 155px 525px, 0px 570px);
+   bottom: 270px;
+   left: 500px;
+   /* border: 3px solid blue; */
+}
+
+.image-filmstrip-movie10 {
+   position: absolute;
+   width: 500px;
+   height: 810px;
+   clip-path: polygon(0px 400px, 105px 427px, 105px 500px, 0px 522px);
+   bottom: 270px;
+   left: 660px;
+   /* border: 3px solid blue; */
+}
+
+.image-filmstrip-movie11 {
+   position: absolute;
+   width: 500px;
+   height: 810px;
+   clip-path: polygon(0px 425px, 48px 437px, 23px 491px, 0px 497px);
+   bottom: 270px;
+   left: 768px;
+   /* border: 3px solid blue; */
+}

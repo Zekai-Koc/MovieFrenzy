@@ -6,21 +6,26 @@ const MovieSearch = () => {
    const [searchText, setSearchText] = useState("");
 
    const [searchTextContext, setSearchTextContext] = useContext(SearchContext);
-   console.log("inside movie search: ", searchTextContext);
 
    const onSubmitHandler = (event) => {
       event.preventDefault();
-      // onSearch(searchText);
       setSearchTextContext(searchText);
    };
 
+   const handleChange = (event) => {
+      setSearchText(event.target.value);
+   };
+
    return (
-      <div className="container-movie-search">
+      <div
+         className="container-movie-search"
+         data-testid="search-context-value"
+      >
          <form onSubmit={onSubmitHandler}>
             <input
                placeholder="Movie Name..."
                value={searchText}
-               onChange={(event) => setSearchText(event.target.value)}
+               onChange={handleChange}
             />
             <button>Search</button>
          </form>

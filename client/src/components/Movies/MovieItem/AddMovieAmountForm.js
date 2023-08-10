@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 import "./AddMovieAmountForm.css";
 
-const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/5451");
+// const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/5451");
 // const audioLocal = new Audio();
 // audioLocal.src = "../../../assets/Door-Bell-Ding-A1.mp3";
 
@@ -27,12 +27,16 @@ const AddMovieAmountForm = (props) => {
          return;
       }
 
-      audio.src = "https://www.fesliyanstudios.com/play-mp3/5451";
-      audio.play();
+      // try {
+      //    audio.src = "https://www.fesliyanstudios.com/play-mp3/5451";
+      //    audio.play();
+      // } catch (error) {
+      //    console.log("Error reading media file from server!");
+      // }
 
-      setTimeout(() => {
-         audio.src = "";
-      }, 340);
+      // setTimeout(() => {
+      //    audio.src = "";
+      // }, 340);
 
       props.onAddToCart(enteredAmountNumber);
    };

@@ -15,8 +15,9 @@ export const fetchData = async (url) => {
       }
       return await response.json();
    } catch (error) {
-      console.error("Error fetching data:", error);
-      throw error;
+      // console.error("Error fetching data:", error);
+      // throw error;
+      res.status(500).json({ error: "Failed to fetch movies" });
    }
 };
 
