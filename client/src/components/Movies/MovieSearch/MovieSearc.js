@@ -29,7 +29,7 @@ const MovieSearch = () => {
             />
             <button>Search</button>
          </form>
-         <h3>{searchText === "" ? "Popular Movies" : searchText}</h3>
+         {/* <h3>{searchText === "" ? "Popular Movies" : searchText}</h3> */}
       </div>
    );
 };

@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useFavorites } from "../store/FavoritesContext";
 import "./FavoritesPage.css";
+import Header from "../components/Layout/Header";
+import Cart from "../components/Cart/Cart";
+
 const FavoritesPage = () => {
    const { favorites } = useFavorites();
    const [favoriteMoviesData, setFavoriteMoviesData] = useState([]);
+
+   const [cartIsShown, setCartIsShown] = useState(false);
+
+   const showCartHandler = () => {
+      setCartIsShown(true);
+   };
+
+   const hideCartHandler = () => {
+      setCartIsShown(false);
+   };
 
    useEffect(() => {
       const fetchData = async (url) => {
@@ -36,64 +49,68 @@ const FavoritesPage = () => {
    }, [favorites]);
 
    return (
-      <div className="favorites-container">
-         <h1 className="favorites-heading">Your Favorite Movies</h1>
-         <div className="movie-cards">
-            {favoriteMoviesData.map((movie) => (
-               <div key={movie.id} className="movie-card">
-                  <img
-                     src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                     alt={movie.title}
-                  />
-                  <h2>{movie.original_title}</h2>
-                  <p>
-                     <strong>Tagline:</strong> {movie.tagline}
-                  </p>
-                  <p>
-                     <strong>Release Date:</strong> {movie.release_date}
-                  </p>
-                  <p>
-                     <strong>Genres:</strong>{" "}
-                     {movie.genres.map((genre) => genre.name).join(", ")}
-                  </p>
-                  <p>
-                     <strong>Language:</strong> {movie.original_language}
-                  </p>
-                  <p>
-                     <strong>Runtime:</strong> {movie.runtime} mins
-                  </p>
-                  <p>
-                     <strong>Popularity:</strong> {movie.popularity}
-                  </p>
-                  <p>
-                     <strong>Budget:</strong> ${movie.budget}
-                  </p>
-                  <p>
-                     <strong>Revenue:</strong> ${movie.revenue}
-                  </p>
-                  <p>
-                     <strong>Vote Average:</strong> {movie.vote_average}
-                  </p>
-                  <p>
-                     <strong>Vote Count:</strong> {movie.vote_count}
-                  </p>
-                  <p>
-                     <strong>Overview:</strong> {movie.overview}
-                  </p>
-                  <p>
-                     <strong>Homepage:</strong>{" "}
-                     <a
-                        href={movie.homepage}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                     >
-                        {movie.homepage}
-                     </a>
-                  </p>
-               </div>
-            ))}
+      <>
+         {cartIsShown && <Cart onClose={hideCartHandler} />}
+         <Header onShowCart={showCartHandler} />
+         <div className="favorites-container">
+            <h1 className="favorites-heading">Your Favorite Movies</h1>
+            <div className="movie-cards">
+               {favoriteMoviesData.map((movie) => (
+                  <div key={movie.id} className="movie-card">
+                     <img
+                        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                        alt={movie.title}
+                     />
+                     <h2>{movie.original_title}</h2>
+                     <p>
+                        <strong>Tagline:</strong> {movie.tagline}
+                     </p>
+                     <p>
+                        <strong>Release Date:</strong> {movie.release_date}
+                     </p>
+                     <p>
+                        <strong>Genres:</strong>{" "}
+                        {movie.genres.map((genre) => genre.name).join(", ")}
+                     </p>
+                     <p>
+                        <strong>Language:</strong> {movie.original_language}
+                     </p>
+                     <p>
+                        <strong>Runtime:</strong> {movie.runtime} mins
+                     </p>
+                     <p>
+                        <strong>Popularity:</strong> {movie.popularity}
+                     </p>
+                     <p>
+                        <strong>Budget:</strong> ${movie.budget}
+                     </p>
+                     <p>
+                        <strong>Revenue:</strong> ${movie.revenue}
+                     </p>
+                     <p>
+                        <strong>Vote Average:</strong> {movie.vote_average}
+                     </p>
+                     <p>
+                        <strong>Vote Count:</strong> {movie.vote_count}
+                     </p>
+                     <p>
+                        <strong>Overview:</strong> {movie.overview}
+                     </p>
+                     <p>
+                        <strong>Homepage:</strong>{" "}
+                        <a
+                           href={movie.homepage}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                        >
+                           {movie.homepage}
+                        </a>
+                     </p>
+                  </div>
+               ))}
+            </div>
          </div>
-      </div>
+      </>
    );
 };
 

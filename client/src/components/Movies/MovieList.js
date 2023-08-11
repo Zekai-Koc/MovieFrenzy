@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import SingleMovie from "./MovieItem/SingleMovie";
 import "./MovieList.css";
 import useFetch from "../hooks/useFetch";
@@ -8,6 +8,7 @@ const baseImgUrlTMDB = "https://image.tmdb.org/t/p/w500";
 
 const MovieList = () => {
    const [searchTextContext, setSearchTextContext] = useContext(SearchContext);
+   const [noMovieFound, setNoMovieFound] = useState(false);
 
    const apiUrl = searchTextContext
       ? `http://localhost:5000/movies/search/${searchTextContext}`
@@ -33,6 +34,7 @@ const MovieList = () => {
    }
 
    if (!data || !data.results || data.results.length === 0) {
+      // setNoMovieFound(true);
       return (
          <div className="status-message">
             <p>No movies found.</p>

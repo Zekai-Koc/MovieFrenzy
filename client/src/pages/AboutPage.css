@@ -3,6 +3,7 @@
    text-align: center;
    /* border: 5px solid red; */
    position: relative;
+   margin-top: 50px;
 }
 
 .about-container::before {

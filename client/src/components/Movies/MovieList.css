@@ -4,7 +4,7 @@
    /* margin: 2rem auto; */
    /* margin: 2rem auto; */
    /* margin-top: 0; */
-   animation: movies-appear 1s ease-out forwards;
+   /* animation: movies-appear 1s ease-out forwards; */
    /* border: 5px solid blue; */
 
    padding: 20px;
@@ -16,6 +16,13 @@
    /* border: 10px solid gold; */
    margin: 5px;
    /* max-width: 600px; */
+}
+
+.section-no-movie-found {
+   display: flex;
+   align-items: center;
+   border-bottom: 1px solid #ccc;
+   margin-bottom: 5px;
 }
 
 .section-movie-list ul {
@@ -42,8 +49,8 @@
    justify-content: center;
    align-items: center;
    height: 200px;
-   font-size: 24px;
-   color: #fff;
+   font-size: 32px;
+   color: red;
 }
 
 .status-message.error {

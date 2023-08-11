@@ -31,7 +31,7 @@ const Cart = (props) => {
          {cartItems}
          <div className="total">
             <span>Total Price</span>
-            <span>{totalPrice.toFixed(2)}</span>
+            <span>{totalPrice ? "$" + totalPrice.toFixed(2) : "$0.00"}</span>
          </div>
          <div className="actions">
             <button className="button--alt" onClick={props.onClose}>
