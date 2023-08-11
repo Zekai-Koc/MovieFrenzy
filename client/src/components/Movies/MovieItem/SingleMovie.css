@@ -8,12 +8,15 @@
 .container-movie-props {
    width: 75%;
    display: flex;
-   align-items: center;
+   /* align-items: center; */
+   /* justify-content: center; */
    cursor: pointer;
+   /* border: 1px solid red; */
 }
 
 .poster {
-   height: 110px;
+   /* height: 110px; */
+   width: 15%;
    transition: transform 0.7s ease;
 }
 
@@ -27,6 +30,8 @@
    justify-content: center;
    padding: 0;
    margin: 0 10px;
+   width: 200px;
+   /* border: 1px solid blue; */
 }
 
 .list-item-single-movie h3 {
@@ -62,4 +67,20 @@
    .list-item-single-movie .description {
       display: none;
    }
+}
+
+.container-add-movie-amount-form {
+   width: 15%;
+   display: flex;
+   align-items: center;
+}
+
+.container-favorite-image {
+   height: 95px;
+   margin-left: auto;
+}
+
+.image-heart-solid {
+   width: 25px;
+   cursor: pointer;
 }

@@ -9,7 +9,7 @@
    display: inline-block;
 }
 
-.heading-todays-offers::before {
+/* .heading-todays-offers::before {
    content: "";
    position: absolute;
    top: 0;
@@ -29,4 +29,4 @@
    100% {
       transform: translateX(150%);
    }
-}
+} */

@@ -3,6 +3,7 @@ import SingleMovie from "./MovieItem/SingleMovie";
 import "./MovieList.css";
 import useFetch from "../hooks/useFetch";
 import { SearchContext } from "../../store/SearchContext";
+// import { FavoritesProvider } from "../../store/FavoritesContext";
 
 const baseImgUrlTMDB = "https://image.tmdb.org/t/p/w500";
 
@@ -43,6 +44,7 @@ const MovieList = ({ addToCart }) => {
    }
 
    return (
+      // <FavoritesProvider>
       <section className="section-movie-list">
          <ul>
             {data.results.map((movie) => (
@@ -54,7 +56,7 @@ const MovieList = ({ addToCart }) => {
                         ? movie.original_title
                         : movie.original_title.slice(0, 19) + "..."
                   }
-                  description={movie.overview.slice(0, 40) + "..."}
+                  description={movie.overview.slice(0, 100) + "..."}
                   price={movie.vote_average}
                   poster={baseImgUrlTMDB + movie.poster_path}
                   release={movie.release_date}
@@ -64,6 +66,7 @@ const MovieList = ({ addToCart }) => {
             ))}
          </ul>
       </section>
+      // </FavoritesProvider>
    );
 };
 

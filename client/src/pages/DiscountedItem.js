@@ -1,9 +1,10 @@
 import React from "react";
 import { useLocation, useParams } from "react-router-dom";
-import "./Discounts.css";
+import "./DiscountedItem.css";
 import AddMovieAmountForm from "../components/Movies/MovieItem/AddMovieAmountForm";
+import Header from "../components/Layout/Header";
 
-const Discounts = () => {
+const DiscountedItem = () => {
    const location = useLocation();
    // const { id } = useParams();
 
@@ -98,4 +99,4 @@ const Discounts = () => {
    );
 };
 
-export default Discounts;
+export default DiscountedItem;
