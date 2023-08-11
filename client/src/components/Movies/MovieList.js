@@ -1,15 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import SingleMovie from "./MovieItem/SingleMovie";
 import "./MovieList.css";
 import useFetch from "../hooks/useFetch";
 import { SearchContext } from "../../store/SearchContext";
-// import { FavoritesProvider } from "../../store/FavoritesContext";
 
 const baseImgUrlTMDB = "https://image.tmdb.org/t/p/w500";
 
-const MovieList = ({ addToCart }) => {
-   // const value = useContext(SearchContext);
-
+const MovieList = () => {
    const [searchTextContext, setSearchTextContext] = useContext(SearchContext);
 
    const apiUrl = searchTextContext
@@ -44,7 +41,6 @@ const MovieList = ({ addToCart }) => {
    }
 
    return (
-      // <FavoritesProvider>
       <section className="section-movie-list">
          <ul>
             {data.results.map((movie) => (
@@ -61,12 +57,10 @@ const MovieList = ({ addToCart }) => {
                   poster={baseImgUrlTMDB + movie.poster_path}
                   release={movie.release_date}
                   popularity={movie.popularity}
-                  addToCart={addToCart}
                />
             ))}
          </ul>
       </section>
-      // </FavoritesProvider>
    );
 };
 

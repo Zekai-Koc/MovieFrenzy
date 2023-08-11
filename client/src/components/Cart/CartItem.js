@@ -1,35 +1,27 @@
 import React from "react";
 import "./CartItem.css";
-// const audioRemove = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
-// const audioAdd = new Audio("https://www.fesliyanstudios.com/play-mp3/5451");
+import { useCartItems } from "../../store/CartContex";
 
 const CartItem = (props) => {
+   const { addCartItem, removeCartItem } = useCartItems();
+
    const price = `$${props.price.toFixed(2)}`;
 
    const handleOnClickMinus = () => {
-      // audioRemove.play();
-
-      props.onRemove({
-         name: props.name,
-         price: props.price,
-         amount: props.amount,
+      removeCartItem({
          id: props.id,
+         name: props.name,
+         amount: props.amount,
+         price: props.price,
       });
    };
 
    const handleOnClickPlus = () => {
-      // audioAdd.src = "https://www.fesliyanstudios.com/play-mp3/5451";
-      // audioAdd.play();
-
-      // setTimeout(() => {
-      //    audioAdd.src = "";
-      // }, 340);
-
-      props.onAdd({
-         name: props.name,
-         price: props.price,
-         amount: props.amount,
+      addCartItem({
          id: props.id,
+         name: props.name,
+         amount: props.amount,
+         price: props.price,
       });
    };
 

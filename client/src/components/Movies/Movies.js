@@ -4,7 +4,7 @@ import MovieSearch from "./MovieSearch/MovieSearc";
 import MovieList from "./MovieList";
 import { SearchProvider } from "../../store/SearchContext";
 
-const Movies = ({ addToCart }) => {
+const Movies = () => {
    return (
       <SearchProvider>
          <div className="container-movies" data-testid="container-movies">
@@ -12,7 +12,7 @@ const Movies = ({ addToCart }) => {
                <MovieSearch />
             </div>
             <div className="container-movies-bottom">
-               <MovieList addToCart={addToCart} />
+               <MovieList />
             </div>
          </div>
       </SearchProvider>

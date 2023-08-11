@@ -1,30 +1,21 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import AddMovieAmountForm from "./AddMovieAmountForm";
 import "./SingleMovie.css";
-// import CartContext from "../../../store/cart_context";
 import heartRegular from "../../../assets/favorite_images/heart-regular.svg";
 import heartSolid from "../../../assets/favorite_images/heart-solid.svg";
 import { useFavorites } from "../../../store/FavoritesContext";
+import { useCartItems } from "../../../store/CartContex";
 
 const SingleMovie = (props) => {
-   // const cartCtx = useContext(CartContext);
-   const { favorites, addFavorite, removeFavorite, isFavorite } =
-      useFavorites();
+   const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+   const { addCartItem } = useCartItems();
 
    const price = `$${props.price.toFixed(2)}`;
    const navigate = useNavigate();
 
    const addToCartHandler = (amount) => {
-      // cartCtx.addItem({
-      //    id: props.id,
-      //    name: props.name,
-      //    amount: amount,
-      //    price: props.price,
-      // });
-
-      props.addToCart({
+      addCartItem({
          id: props.id,
          name: props.name,
          amount: amount,
@@ -42,12 +33,7 @@ const SingleMovie = (props) => {
       } else {
          addFavorite(props.id);
       }
-      // console.log("favorites: ", favorites);
    };
-
-   useEffect(() => {
-      // console.log("favorites updated: ", favorites);
-   }, [favorites]);
 
    return (
       <li className="list-item-single-movie" data-testid="movie-container">

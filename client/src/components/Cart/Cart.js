@@ -3,13 +3,16 @@ import React from "react";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import "./Cart.css";
+import { useCartItems } from "../../store/CartContex";
 
 const Cart = (props) => {
-   const hasItems = props.cartItems.length > 0;
+   const { cartItems555, totalPrice } = useCartItems();
+
+   const hasItems = cartItems555.length > 0;
 
    const cartItems = (
       <ul className="cart-items">
-         {props.cartItems.map((item) => (
+         {cartItems555.map((item) => (
             <CartItem
                key={item.id}
                id={item.id}
@@ -27,8 +30,8 @@ const Cart = (props) => {
       <Modal onClose={props.onClose}>
          {cartItems}
          <div className="total">
-            <span>Total Amount</span>
-            <span>{props.totalAmount.toFixed(2)}</span>
+            <span>Total Price</span>
+            <span>{totalPrice.toFixed(2)}</span>
          </div>
          <div className="actions">
             <button className="button--alt" onClick={props.onClose}>
