@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Details from "./pages/Details";
-import DiscountedItemPage from "./pages/DiscountedItemPage";
-import FilmStrip from "./pages/FilmStrip";
-import FavoritesPage from "./pages/FavoritesPage";
-import AboutPage from "./pages/AboutPage";
+import Home from "./pages/page_home/Home";
+import Details from "./pages/page_details/Details";
+import DiscountedItemPage from "./pages/page_discounted_item/DiscountedItemPage";
+import FilmStrip from "./pages/page_film_strip/FilmStrip";
+import FavoritesPage from "./pages/page_favorites/FavoritesPage";
+import AboutPage from "./pages/page_about/AboutPage";
 
 const App = () => {
    return (

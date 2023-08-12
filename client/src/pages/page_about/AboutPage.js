@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./AboutPage.css";
 // import movieReelImage from "../assets/best-valentines-movies-1675040306.jpg"; // Import your background image
-import popcornImage from "../assets/popcorn-3.png"; // Import an image for the content section
-import Header from "../components/Layout/Header";
-import Cart from "../components/Cart/Cart";
+import popcornImage from "../../assets/popcorn-3.png"; // Import an image for the content section
+import Header from "../../components/Layout/Header";
+import Cart from "../../components/Cart/Cart";
 
 const About = () => {
    const [cartIsShown, setCartIsShown] = useState(false);

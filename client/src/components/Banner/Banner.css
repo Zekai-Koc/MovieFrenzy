@@ -1,10 +1,7 @@
-/* Add this CSS to your stylesheet */
-
 .heading-todays-offers {
    text-align: center;
    font-size: 1.5rem;
    font-weight: bold;
-   /* margin: 2rem 0; */
    position: relative;
    display: inline-block;
 }

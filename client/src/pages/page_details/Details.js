@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../components/hooks/useFetch";
+import useFetch from "../../components/hooks/useFetch";
 import "./Details.css";
-import Header from "../components/Layout/Header";
-import Cart from "../components/Cart/Cart";
+import Header from "../../components/Layout/Header";
+import Cart from "../../components/Cart/Cart";
 
 const Details = () => {
    const { id } = useParams();

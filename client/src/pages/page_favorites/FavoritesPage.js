@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useFavorites } from "../store/FavoritesContext";
+import { useFavorites } from "../../store/FavoritesContext";
 import "./FavoritesPage.css";
-import Header from "../components/Layout/Header";
-import Cart from "../components/Cart/Cart";
+import Header from "../../components/Layout/Header";
+import Cart from "../../components/Cart/Cart";
 
 const FavoritesPage = () => {
    const { favorites } = useFavorites();

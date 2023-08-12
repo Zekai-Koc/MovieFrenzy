@@ -51,24 +51,6 @@
    padding: 20px;
 }
 
-@media (max-width: 900px) {
-   .list-item-single-movie .description {
-      display: none;
-   }
-}
-
-@media (max-width: 800px) {
-   .list-item-single-movie .description {
-      display: block;
-   }
-}
-
-@media (max-width: 600px) {
-   .list-item-single-movie .description {
-      display: none;
-   }
-}
-
 .container-add-movie-amount-form {
    width: 15%;
    display: flex;
@@ -83,4 +65,22 @@
 .image-heart-solid {
    width: 25px;
    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+   .list-item-single-movie .description {
+      display: none;
+   }
+}
+
+@media (max-width: 800px) {
+   .poster {
+      display: none;
+   }
+}
+
+@media (max-width: 600px) {
+   .list-item-single-movie .description {
+      display: none;
+   }
 }

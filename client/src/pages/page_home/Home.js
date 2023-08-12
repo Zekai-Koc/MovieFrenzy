@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Header from "../components/Layout/Header";
-import Movies from "../components/Movies/Movies";
-import Cart from "../components/Cart/Cart";
-import Banner from "../components/Banner/Banner";
+import Header from "../../components/Layout/Header";
+import Movies from "../../components/Movies/Movies";
+import Cart from "../../components/Cart/Cart";
+import Banner from "../../components/Banner/Banner";
 import "./Home.css";
 
 function Home() {

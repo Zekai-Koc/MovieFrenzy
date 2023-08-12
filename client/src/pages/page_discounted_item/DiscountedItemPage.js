@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./DiscountedItemPage.css";
-import AddMovieAmountForm from "../components/Movies/MovieItem/AddMovieAmountForm";
-import Header from "../components/Layout/Header";
-import Cart from "../components/Cart/Cart";
+import AddMovieAmountForm from "../../components/Movies/MovieItem/AddMovieAmountForm";
+import Header from "../../components/Layout/Header";
+import Cart from "../../components/Cart/Cart";
 
 const DiscountedItem = () => {
    const location = useLocation();

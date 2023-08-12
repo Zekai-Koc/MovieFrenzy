@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./FilmStrip.css";
-import useFetch from "../components/hooks/useFetch";
-import film_strip_two from "../assets/filmstrip/film_strip_two.webp";
-import film_strip2 from "../assets/filmstrip/film-strip-vector-free.png";
+// import useFetch from "../../components/hooks/useFetch";
+// import film_strip_two from "../../assets/filmstrip/film_strip_two.webp";
+import film_strip2 from "../../assets/filmstrip/film-strip-vector-free.png";
 
 const FilmStrip = () => {
    const [posterPath, setPosterPath] = useState("");
